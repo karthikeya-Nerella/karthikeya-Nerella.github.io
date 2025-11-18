@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karthikeya Nerella | Senior React & React Native Developer</title>
+
+    <style>
+        /* Global Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #050505;
+            color: #e5e5e5;
+            overflow-x: hidden;
+        }
+
+        /* Neon Glow Accent */
+        :root {
+            --neon: #00eaff;
+            --neon2: #00b7ff;
+            --bg-dark: #0b0b0b;
+        }
+
+        /* Navbar */
+        nav {
+            width: 100%;
+            padding: 18px 50px;
+            position: fixed;
+            top: 0;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,255,255,0.07);
+        }
+
+        nav .left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        nav img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--neon);
+            object-fit: cover;
+        }
+
+        nav h1 {
+            font-size: 1.2rem;
+            color: var(--neon);
+            font-weight: 600;
+        }
+
+        nav h2 {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: -2px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 120px;
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--neon);
+            text-shadow: 0 0 15px var(--neon);
+        }
+
+        .hero p {
+            margin-top: 18px;
+            font-size: 1.1rem;
+            color: #aaa;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tech-badges {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .badge {
+            padding: 10px 18px;
+            background: rgba(0, 255, 255, 0.07);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 25px;
+            color: var(--neon);
+            font-size: 0.9rem;
+        }
+
+        .cta-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-buttons a {
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 1px solid var(--neon);
+            color: var(--neon);
+            transition: 0.2s;
+        }
+        .cta-buttons a:hover {
+            background: var(--neon);
+            color: #000;
+        }
+
+        /* Section Container */
+        section {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2.section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--neon);
+            text-shadow: 0 0 10px var(--neon2);
+        }
+
+        /* ABOUT */
+        .about p {
+            font-size: 1.05rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(0,255,255,0.08);
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+        .skill-card:hover {
+            border-color: var(--neon);
+            transform: translateY(-3px);
+        }
+
+        /* EXPERIENCE TIMELINE */
+        .timeline {
+            border-left: 2px solid var(--neon);
+            padding-left: 30px;
+        }
+
+        .exp-card {
+            margin-bottom: 40px;
+            padding-left: 20px;
+        }
+
+        .exp-card h3 {
+            color: var(--neon);
+        }
+
+        .exp-card span {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .exp-card p {
+            color: #ccc;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        /* PROJECT CARDS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(0,255,255,0.08);
+            transition: 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: var(--neon);
+            transform: translateY(-4px);
+        }
+
+        .project-card h4 {
+            color: var(--neon);
+            margin-bottom: 10px;
+        }
+
+        /* CONTACT */
+        .contact p {
+            color: #ccc;
+            margin: 6px 0;
+            font-size: 1.05rem;
+        }
+        .contact a {
+            color: var(--neon);
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: #777;
+            border-top: 1px solid rgba(0,255,255,0.06);
+            margin-top: 60px;
+        }
+
+        @media(max-width: 600px) {
+            nav { padding: 12px 20px; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="left">
+            <img src="profile.jpg" alt="Profile Photo" />
+            <div>
+                <h1>Karthikeya Nerella</h1>
+                <h2>Senior ReactJS / React Native Developer</h2>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Hello, I'm Karthikeya</h1>
+        <p>Senior Frontend and Mobile Developer building fast, scalable, and user-friendly applications across fintech, healthcare, and enterprise platforms.</p>
+
+        <div class="tech-badges">
+            <div class="badge">React.js</div>
+            <div class="badge">Next.js</div>
+            <div class="badge">React Native</div>
+            <div class="badge">TypeScript</div>
+            <div class="badge">Node.js</div>
+            <div class="badge">AWS</div>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="#projects">View Projects</a>
+            <a href="#contact">Contact Me</a>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+
+        <p>
+            I’m a Senior Frontend and Mobile Developer with more than 10 years of experience building fast, scalable, and user-focused applications. I’ve worked across finance, healthcare, and enterprise platforms, creating everything from secure banking dashboards to HIPAA-compliant mobile apps.
+            <br><br>
+            I specialize in React.js, Next.js, and React Native, and I enjoy taking complex problems and translating them into clean, maintainable interfaces that feel effortless for users. I work end-to-end across architecture, state management, API integrations (REST and GraphQL), and deployments on AWS and GCP.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill-card">React.js / React 18</div>
+            <div class="skill-card">Next.js</div>
+            <div class="skill-card">React Native</div>
+            <div class="skill-card">TypeScript</div>
+            <div class="skill-card">Redux Toolkit</div>
+            <div class="skill-card">GraphQL / Apollo</div>
+            <div class="skill-card">Node.js / Express</div>
+            <div class="skill-card">AWS / GCP / Azure</div>
+            <div class="skill-card">MongoDB / PostgreSQL</div>
+            <div class="skill-card">Jest / Cypress</div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="timeline">
+
+            <div class="exp-card">
+                <h3>Sr. Mobile & Web Engineer — Fiserv, NJ</h3>
+                <span>Feb 2024 – Present</span>
+                <p>
+                    Led React Native, React.js, and Next.js development for secure banking apps. Integrated Swift/Kotlin modules, optimized React architectures, delivered WCAG-compliant UI, automated CI/CD pipelines, and enhanced performance using Fabric/TurboModules.
+                </p>
+            </div>
+
+            <div class="exp-card">
+                <h3>Senior Frontend / Mobile Engineer — CareFirst, MD</h3>
+                <span>2022 – 2024</span>
+                <p>
+                    Built HIPAA-compliant healthcare apps in React/Next and React Native, migrated UIKit → SwiftUI, implemented Intune MDM, added offline-first capabilities, and improved performance using Suspense & memoization.
+                </p>
+            </div>
+
+            <div class="exp-card">
+                <h3>Frontend & Mobile Engineer — Citi Bank, NY</h3>
+                <span>2020 – 2022</span>
+                <p>
+                    Delivered secure mobile banking features in React Native & TypeScript, optimized enterprise React apps, strengthened authentication, and enhanced CI/CD reliability.
+                </p>
+            </div>
+
+            <div class="exp-card">
+                <h3>React / React Native Engineer — Kroger, OH</h3>
+                <span>2019 – 2020</span>
+                <p>
+                    Built key mobile features (cart, coupons, navigation), improved accessibility, added offline support, and integrated Firebase Crashlytics and Remote Config.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects">
+            <div class="project-card">
+                <h4>Financial Dashboard Platform</h4>
+                <p>Built secure dashboards in React 18, Next.js, GraphQL, and AWS for high-scale financial reporting.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>Mobile Banking App</h4>
+                <p>Designed and developed an enterprise-grade React Native app with biometrics, secure storage, and Swift/Kotlin modules.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>Healthcare Member Portal</h4>
+                <p>Created HIPAA-compliant patient portals using React, Next.js, and GraphQL with WCAG 2.1 accessibility.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact</h2>
+
+        <p><strong>Email:</strong> <a href="mailto:karthikfed1a@gmail.com">karthikfed1a@gmail.com</a></p>
+        <p><strong>Phone:</strong> 414-436-6408</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/karthikeya-Nerella">github.com/karthikeya-Nerella</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/karthikeya-n1/">linkedin.com/in/karthikeya-n1</a></p>
+        <br>
+        <p>Location: Jersey City, NJ</p>
+    </section>
+
+    <footer>
+        © 2025 Karthikeya Nerella — All Rights Reserved
+    </footer>
+
+</body>
+</html>
